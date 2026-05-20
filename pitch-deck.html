@@ -22,6 +22,10 @@
   --pur-100: #e8e5f4;
   --pur-50:  #f3f1f9;
 
+  --peach: #E8956D;      /* from logo sparkle */
+  --peach-light: #f5c4a8;
+  --peach-dark: #c97040;
+
   --teal-700: #15614f;
   --teal-600: #1a7a68;
   --teal-500: #2a8a76;  /* accent-teal */
@@ -187,58 +191,85 @@ html, body {
 
 /* ══ HOOK SLIDE ══ */
 #s-hook {
-  background: var(--pur-900);
-  justify-content: center; align-items: center;
-  padding: 5vh 8vw;
-  position: relative; text-align: center;
+  background: linear-gradient(160deg, #1a0d3a 0%, var(--pur-900) 50%, #0d1f2d 100%);
+  justify-content: space-between;
+  padding: 4vh 7vw 3.5vh;
+  text-align: left;
 }
 #s-hook::before {
   content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(74,45,138,0.4) 0%, transparent 75%);
+  position: absolute;
+  left: -8vw; top: -20%;
+  width: 55vw; height: 140%;
+  background: radial-gradient(ellipse at 30% 50%, rgba(74,45,138,0.35) 0%, transparent 60%);
   pointer-events: none;
+}
+.hook-sparkle {
+  position: absolute; right: 6vw; top: 8%;
+  width: clamp(55px, 8vw, 100px);
+  color: var(--peach); pointer-events: none;
+  opacity: 0.85;
 }
 .hook-kicker {
   font-family: var(--font-body); font-weight: 800;
-  font-size: clamp(0.65rem, 1vw, 0.8rem);
-  letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--teal-400); margin-bottom: 2.5vh;
+  font-size: clamp(0.62rem, 0.95vw, 0.78rem);
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--peach); margin-bottom: 1.8vh;
+  display: flex; align-items: center; gap: 0.7rem;
+  flex-shrink: 0;
 }
-.hook-quote {
+.hook-kicker::before {
+  content: ''; display: block;
+  width: 2rem; height: 2px;
+  background: var(--peach); flex-shrink: 0;
+}
+.hook-headline {
   font-family: var(--font-head); font-weight: 900;
-  font-size: clamp(1.5rem, 3.5vw, 2.8rem);
-  color: var(--white); line-height: 1.25;
-  max-width: 22ch; margin: 0 auto 3vh;
-  letter-spacing: -0.01em;
+  font-size: clamp(2.4rem, 5.5vw, 4.6rem);
+  color: var(--white); line-height: 1.08;
+  letter-spacing: -0.025em;
+  flex-shrink: 0;
 }
-.hook-quote em { color: var(--teal-300); font-style: normal; }
+.hook-headline em { color: var(--peach); font-style: normal; }
+.hook-headline .hl-teal { color: var(--teal-300); }
+
 .hook-stats {
-  display: flex; align-items: center;
-  justify-content: center; gap: 0;
-  width: 100%; margin-bottom: 3vh;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.2vw; flex-shrink: 0;
 }
-.hs-item { flex: 1; padding: 2vh 1.5vw; }
+.hs-box {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(155,126,212,0.2);
+  border-radius: 14px; padding: 1.8vh 1.5vw;
+  position: relative; overflow: hidden;
+}
+.hs-box::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--teal-500), transparent);
+}
 .hs-num {
   font-family: var(--font-head); font-weight: 900;
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  color: var(--teal-400); line-height: 1;
+  font-size: clamp(2rem, 4.5vw, 3.6rem);
+  color: var(--white); line-height: 1;
 }
+.hs-num .hs-accent { color: var(--teal-400); }
 .hs-label {
-  font-size: clamp(0.72rem, 1.1vw, 0.88rem);
-  color: var(--pur-300); margin-top: 0.4rem;
-  line-height: 1.4;
+  font-size: clamp(0.7rem, 1.05vw, 0.84rem);
+  color: var(--pur-300); margin-top: 0.5rem;
+  line-height: 1.45;
 }
-.hs-sep {
-  font-size: 2rem; color: rgba(155,126,212,0.2);
-  align-self: center; flex-shrink: 0;
-}
-.hook-answer {
-  font-family: var(--font-head); font-weight: 700;
-  font-size: clamp(0.88rem, 1.5vw, 1.15rem);
+
+.hook-cta {
+  flex-shrink: 0; margin-top: 2.2vh;
+  display: flex; align-items: center; gap: 1.2rem;
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(0.85rem, 1.5vw, 1.15rem);
   color: var(--white);
-  background: linear-gradient(90deg, var(--pur-700), var(--teal-600));
-  display: inline-block;
-  padding: 0.7rem 2.5rem; border-radius: 99px;
+}
+.hook-cta-bar {
+  height: 2px; flex: 1;
+  background: linear-gradient(90deg, var(--teal-500), transparent);
 }
 
 /* ══════════════════════════════════════════════
@@ -447,8 +478,8 @@ html, body {
 
 .team-row {
   grid-column: 1 / -1;
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 1.5vw;
+  display: grid; grid-template-columns: 0.85fr 1.1fr 1.1fr;
+  gap: 1.2vw;
 }
 .team-card {
   background: rgba(255,255,255,0.04);
@@ -613,6 +644,106 @@ html, body {
 }
 .s5-footer a { color: var(--teal-300); text-decoration: none; }
 
+/* ── Sparkle deco (brand motif from logo) ── */
+.sparkle-deco {
+  position: absolute; pointer-events: none;
+  color: var(--peach); opacity: 0.8;
+}
+.s1-sparkle {
+  top: 6%; right: 5.5%;
+  width: clamp(55px, 7.5vw, 100px);
+  filter: drop-shadow(0 0 18px rgba(232,149,109,0.6));
+}
+.s1-sparkle-sm {
+  bottom: 22%; left: 4%;
+  width: clamp(28px, 3.8vw, 50px);
+  opacity: 0.35;
+  transform: rotate(20deg);
+}
+.hook-sparkle {
+  filter: drop-shadow(0 0 14px rgba(232,149,109,0.5));
+}
+
+/* Stat box accent variants */
+.hs-box:nth-child(1)::before { background: linear-gradient(90deg, var(--peach), transparent); }
+.hs-box:nth-child(2)::before { background: linear-gradient(90deg, var(--pur-400), transparent); }
+.hs-box:nth-child(3)::before { background: linear-gradient(90deg, var(--teal-500), transparent); }
+
+/* Slide label accent dot */
+.slide-label::before {
+  content: '';
+  display: inline-block;
+  width: 0.5rem; height: 0.5rem; border-radius: 50%;
+  background: var(--teal-400);
+  margin-right: 0.5rem; vertical-align: middle;
+  flex-shrink: 0;
+}
+.slide-label {
+  display: flex; align-items: center;
+}
+
+/* Award image in cover badges */
+.s1-award-img {
+  height: clamp(28px, 3.8vh, 46px); width: auto;
+  object-fit: contain; border-radius: 8px;
+}
+
+/* Problem row: left bar instead of circle */
+.prob-bar {
+  width: 4px; align-self: stretch; border-radius: 99px; flex-shrink: 0;
+  margin-top: 2px;
+}
+.problem-row {
+  display: grid; grid-template-columns: 4px 1fr;
+  gap: 1.2rem; align-items: start;
+}
+
+/* Hook background dot grid (subtle texture) */
+#s-hook::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(155,126,212,0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+/* Stronger vision quote */
+.vision-dream {
+  margin-top: 0.8rem;
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(0.75rem, 1.2vw, 0.92rem);
+  color: var(--peach); line-height: 1.4;
+  font-style: italic;
+}
+
+/* ── Team photo ── */
+.team-photo-card {
+  border-radius: 12px; overflow: hidden;
+  position: relative;
+  min-height: 0;
+}
+.team-workshop-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 20%;
+}
+.team-photo-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(29,12,62,0.85) 0%, rgba(29,12,62,0.2) 60%, transparent 100%);
+}
+.team-photo-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 0.8rem 1rem;
+  font-size: clamp(0.6rem, 0.9vw, 0.72rem); font-weight: 700;
+  color: var(--teal-300); letter-spacing: 0.05em;
+}
+
+/* ── Partner logo strip (bigger) ── */
+.partner-logo {
+  height: clamp(30px, 4.8vh, 60px); width: auto;
+  object-fit: contain; flex-shrink: 0;
+}
+
 /* ── Team card enhancements ── */
 .team-header {
   display: flex; align-items: center; gap: 0.8rem;
@@ -645,10 +776,7 @@ html, body {
   background: rgba(255,255,255,0.96);
   flex-shrink: 0;
 }
-.partner-logo {
-  height: clamp(22px, 3.2vh, 40px); width: auto;
-  object-fit: contain; flex-shrink: 0;
-}
+/* partner-logo size defined above */
 .partner-divider {
   width: 1px; height: 2.2vh;
   background: rgba(0,0,0,0.1); flex-shrink: 0;
@@ -682,6 +810,16 @@ html, body {
 
 <!-- ══ SLIDE 1 — COVER ══ -->
 <div class="slide active" id="s1">
+  <!-- Brand sparkle motif (mirrors logo) -->
+  <svg class="sparkle-deco s1-sparkle" viewBox="0 0 80 80" fill="none">
+    <path d="M40 4 L43.5 36.5 L76 40 L43.5 43.5 L40 76 L36.5 43.5 L4 40 L36.5 36.5 Z" fill="currentColor"/>
+    <path d="M66 16 L67.2 22.8 L74 24 L67.2 25.2 L66 32 L64.8 25.2 L58 24 L64.8 22.8 Z" fill="currentColor" opacity="0.55"/>
+    <circle cx="62" cy="62" r="3" fill="currentColor" opacity="0.35"/>
+    <circle cx="56" cy="10" r="2" fill="currentColor" opacity="0.4"/>
+  </svg>
+  <svg class="sparkle-deco s1-sparkle-sm" viewBox="0 0 60 60" fill="none">
+    <path d="M30 3 L32.5 27.5 L57 30 L32.5 32.5 L30 57 L27.5 32.5 L3 30 L27.5 27.5 Z" fill="currentColor"/>
+  </svg>
   <img src="logo.png" alt="Skills-UP! Logo" class="s1-logo">
   <div class="s1-eyebrow">Verein zur Entwicklung der digitalen Zukunftsbildung</div>
   <div class="s1-title">Skills-UP<span class="accent">!</span></div>
@@ -692,7 +830,7 @@ html, body {
   </div>
   <div class="s1-badges">
     <div class="s1-badge outline">Pitch &nbsp;·&nbsp; 2026</div>
-    <div class="s1-badge filled">🏆 Top 3 MEGA Bildungsmillion 2025</div>
+    <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/bfd7d6d1-fb35-40a9-9ec2-2bff6a05c49b/top3+Skills-up.jpg" alt="Top 3 MEGA Bildungsmillion" class="s1-award-img">
     <div class="s1-badge filled">🇦🇹 Nat. Finanzbildungsstrategie 2026</div>
     <div class="s1-badge filled">✅ Digitales Gütesiegel</div>
   </div>
@@ -715,25 +853,44 @@ html, body {
 
 <!-- ══ SLIDE HOOK ══ -->
 <div class="slide" id="s-hook">
+  <!-- Sparkle brand motif -->
+  <svg class="hook-sparkle" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M40 4 L43.5 36.5 L76 40 L43.5 43.5 L40 76 L36.5 43.5 L4 40 L36.5 36.5 Z" fill="currentColor"/>
+    <path d="M66 16 L67.2 22.8 L74 24 L67.2 25.2 L66 32 L64.8 25.2 L58 24 L64.8 22.8 Z" fill="currentColor" opacity="0.55"/>
+    <path d="M18 52 L19 57 L24 58 L19 59 L18 64 L17 59 L12 58 L17 57 Z" fill="currentColor" opacity="0.45"/>
+    <circle cx="62" cy="62" r="3" fill="currentColor" opacity="0.35"/>
+    <circle cx="20" cy="18" r="2" fill="currentColor" opacity="0.3"/>
+    <circle cx="56" cy="10" r="1.5" fill="currentColor" opacity="0.4"/>
+  </svg>
+
   <div class="hook-kicker">Die unbequeme Wahrheit</div>
-  <div class="hook-quote">Österreichs Jugend verdient ihr erstes Gehalt.<br><em>Niemand erklärt ihnen, was sie damit tun sollen.</em></div>
+
+  <div class="hook-headline">
+    Jede <em>4. Person</em><br>
+    in der Schulden&shy;beratung<br>
+    ist <span class="hl-teal">unter 30.</span>
+  </div>
+
   <div class="hook-stats">
-    <div class="hs-item">
-      <div class="hs-num">1 von 4</div>
-      <div class="hs-label">Menschen in der Schuldnerberatung<br>ist unter 30 Jahre alt</div>
+    <div class="hs-box">
+      <div class="hs-num"><span class="hs-accent">40.000</span></div>
+      <div class="hs-label">neue Lehrlinge pro Jahr in Österreich — ohne jede Finanzbildung im Lehrplan</div>
     </div>
-    <div class="hs-sep">·</div>
-    <div class="hs-item">
-      <div class="hs-num">40.000</div>
-      <div class="hs-label">neue Lehrlinge pro Jahr in Österreich —<br>ohne Finanzbildung</div>
+    <div class="hs-box">
+      <div class="hs-num"><span class="hs-accent">0</span></div>
+      <div class="hs-label">Pflichtfächer zu Geld, Schulden oder Sparen in der Berufsschule</div>
     </div>
-    <div class="hs-sep">·</div>
-    <div class="hs-item">
-      <div class="hs-num">0</div>
-      <div class="hs-label">Pflichtfächer zu Geld<br>in der Berufsschule</div>
+    <div class="hs-box">
+      <div class="hs-num"><span class="hs-accent">90</span>%</div>
+      <div class="hs-label">der Skills-UP!-Teilnehmer:innen verändern ihr Finanzverhalten positiv</div>
     </div>
   </div>
-  <div class="hook-answer">Skills-UP! schließt diese Lücke — für Österreichs Lehrlinge.</div>
+
+  <div class="hook-cta">
+    <div class="hook-cta-bar"></div>
+    Skills-UP! schließt diese Lücke — für Österreichs Lehrlinge.
+    <div class="hook-cta-bar" style="background: linear-gradient(90deg, transparent, var(--teal-500))"></div>
+  </div>
 </div>
 
 <!-- ══ SLIDE 2 — PROBLEM ══ -->
@@ -750,27 +907,27 @@ html, body {
 
   <div class="s2-problems">
     <div class="problem-row">
-      <div class="prob-num" style="background:#c84040">1</div>
+      <div class="prob-bar" style="background:#c84040"></div>
       <div class="prob-body">
         <h3>Finanzbildung fehlt im Schulsystem komplett</h3>
-        <p>Weder Berufsschule noch AHS bereiten Jugendliche auf Girokonto, Kreditfallen oder Steuern vor. Das Ergebnis: junge Menschen starten ins Berufsleben ohne grundlegendes Finanzwissen.</p>
-        <span class="highlight">1 von 4 Schuldnerberatern ist unter 30 Jahre alt</span>
+        <p>Weder Berufsschule noch AHS bereiten Jugendliche auf Girokonto, Kreditfallen oder Steuern vor. Junge Menschen starten ins Berufsleben ohne grundlegendes Finanzwissen.</p>
+        <span class="highlight">1 von 4 Personen in der Schuldnerberatung ist unter 30 Jahre alt</span>
       </div>
     </div>
     <div class="problem-row">
-      <div class="prob-num" style="background:#d87228">2</div>
+      <div class="prob-bar" style="background:#d87228"></div>
       <div class="prob-body">
         <h3>Bestehende Angebote verfehlen die Zielgruppe</h3>
-        <p>Lehrbücher, PDFs und Bankenseminare sprechen Jugendliche nicht an. Trockene Inhalte ohne Praxisbezug führen zu Desinteresse — und die Finanzindustrie hat eigene Interessen.</p>
-        <span class="highlight" style="background:#fff8e1;color:#d87228">Konsumkredite & Ratenkäufe: häufigste Ursache für Überschuldung</span>
+        <p>Lehrbücher, PDFs und Bankenseminare sprechen Jugendliche nicht an. Trockene Inhalte ohne Praxisbezug führen zu Desinteresse — und die Finanzindustrie verfolgt eigene Interessen.</p>
+        <span class="highlight" style="background:#fff8e1;color:#d87228">Konsumkredite &amp; Ratenkäufe: häufigste Ursache für Überschuldung</span>
       </div>
     </div>
     <div class="problem-row">
-      <div class="prob-num" style="background:#4a2d8a">3</div>
+      <div class="prob-bar" style="background:#4a2d8a"></div>
       <div class="prob-body">
         <h3>Lehrlinge sind besonders exponiert — und besonders vergessen</h3>
         <p>Mit dem ersten Gehalt kommen Werbung, Ratenbindung und Konsumversuchung. Azubis haben Einkommen, aber keine Kompetenzen — eine gefährliche Kombination.</p>
-        <span class="highlight" style="background:#e8e5f4;color:#4a2d8a">ca. 40.000 neue Lehrlinge pro Jahr in Österreich ohne Finanzbildung</span>
+        <span class="highlight" style="background:#e8e5f4;color:#4a2d8a">ca. 40.000 neue Lehrlinge pro Jahr in Österreich — ohne Finanzbildung</span>
       </div>
     </div>
   </div>
@@ -875,6 +1032,12 @@ html, body {
     </div>
 
     <div class="team-row">
+      <!-- Workshop photo card -->
+      <div class="team-photo-card">
+        <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/0059eb0d-3954-4377-b6ea-df7f54e8bf32/IMG_5759.jpeg" alt="Skills-UP! Workshop" class="team-workshop-img">
+        <div class="team-photo-overlay"></div>
+        <div class="team-photo-label">Skills-UP! · Workshop · Berufsschule 2026</div>
+      </div>
       <div class="team-card">
         <div class="team-header">
           <div class="team-avatar" style="background: linear-gradient(135deg, #2a8a76, #15614f)">MW</div>
@@ -1012,7 +1175,7 @@ html, body {
             740 direkt erreichte Lehrlinge &nbsp;·&nbsp; 42 Pädagog:innen &nbsp;·&nbsp; +25 % Inhalte &nbsp;·&nbsp; Train-the-Trainer
           </div>
         </div>
-        <div style="margin-top:0.6rem;font-size:clamp(0.6rem,0.88vw,0.7rem);color:var(--pur-300);line-height:1.4;font-style:italic;">
+        <div class="vision-dream">
           „Eine generationenübergreifende Bewegung für Finanzkompetenz — powered by Lehrlinge selbst."
         </div>
       </div>
