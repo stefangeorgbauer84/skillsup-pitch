@@ -613,6 +613,53 @@ html, body {
 }
 .s5-footer a { color: var(--teal-300); text-decoration: none; }
 
+/* ── Team card enhancements ── */
+.team-header {
+  display: flex; align-items: center; gap: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+.team-avatar {
+  width: clamp(2rem, 3.2vw, 2.8rem);
+  height: clamp(2rem, 3.2vw, 2.8rem);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head); font-weight: 900;
+  font-size: clamp(0.7rem, 1.1vw, 0.9rem);
+  color: var(--white); flex-shrink: 0;
+}
+.team-header-text { flex: 1; }
+.team-tags {
+  display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.4rem;
+}
+.team-tag {
+  background: rgba(155,126,212,0.15); color: var(--pur-300);
+  font-size: clamp(0.56rem, 0.8vw, 0.65rem); font-weight: 700;
+  padding: 0.1rem 0.45rem; border-radius: 4px;
+}
+
+/* ── Partner logo strip ── */
+.partner-logos {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0; flex-wrap: nowrap;
+  padding: 0.9vh 5.5vw; margin: 1.5vh -5.5vw 0;
+  background: rgba(255,255,255,0.96);
+  flex-shrink: 0;
+}
+.partner-logo {
+  height: clamp(22px, 3.2vh, 40px); width: auto;
+  object-fit: contain; flex-shrink: 0;
+}
+.partner-divider {
+  width: 1px; height: 2.2vh;
+  background: rgba(0,0,0,0.1); flex-shrink: 0;
+  margin: 0 1.6vw;
+}
+.partner-text {
+  font-size: clamp(0.6rem, 0.85vw, 0.7rem);
+  font-weight: 700; color: var(--gray-700);
+  white-space: nowrap;
+}
+
 /* ── Print ── */
 @media print {
   @page { size: 297mm 167mm; margin: 0; }
@@ -829,23 +876,57 @@ html, body {
 
     <div class="team-row">
       <div class="team-card">
-        <div class="team-role">Co-Founderin · Obfrau</div>
-        <div class="team-name">Marina Winkler, MA</div>
-        <div class="team-bio">Education &amp; Finance Expert · EdTech for Impact · TFA Alumni · 2 VZÄ Kernteam + 4 Trainer:innen</div>
+        <div class="team-header">
+          <div class="team-avatar" style="background: linear-gradient(135deg, #2a8a76, #15614f)">MW</div>
+          <div class="team-header-text">
+            <div class="team-role">Co-Founderin · Obfrau</div>
+            <div class="team-name">Marina Winkler, MA</div>
+          </div>
+        </div>
+        <div class="team-tags">
+          <span class="team-tag">Education &amp; Finance</span>
+          <span class="team-tag">EdTech for Impact</span>
+          <span class="team-tag">TFA Alumna</span>
+          <span class="team-tag">Aktiv seit 2020</span>
+          <span class="team-tag">2 VZÄ + 4 Trainer:innen</span>
+        </div>
+        <div class="team-bio">Marina entwickelt seit 2020 mit voller Energie innovative Formate für Jugendliche, die begeistern und langfristig wirken — mit Kreativität, Verständnis und Herz. Sie verantwortet Bildungskonzept, Partneraufbau und Programmentwicklung. Gesamtbudget seit Start: € 227.000.</div>
         <div class="team-quote">„Viele Lehrlinge sind auf wirtschaftliche Herausforderungen nicht ausreichend vorbereitet. Mit Skills-UP! stärken wir ihre Finanzkompetenz — damit sie Schuldenfallen frühzeitig erkennen."</div>
       </div>
       <div class="team-card">
-        <div class="team-role">Co-Founder · Stv. Obfrau</div>
-        <div class="team-name">Dr. Stefan Bauer</div>
-        <div class="team-bio">Content Creator Skills-UP! · WP Lead L2BGreen · Budget gesamt seit Start: € 227.000</div>
-        <div class="team-quote">„Skills-UP! bringt Finanzbildung dorthin, wo sie gebraucht wird: direkt in den Alltag der Berufsschule. Unser Traum? Eine generationenübergreifende Bewegung für Finanzkompetenz."</div>
+        <div class="team-header">
+          <div class="team-avatar" style="background: linear-gradient(135deg, #4a2d8a, #6b4db0)">SB</div>
+          <div class="team-header-text">
+            <div class="team-role">Co-Founder · Stv. Obmann</div>
+            <div class="team-name">Dr. Stefan Bauer</div>
+          </div>
+        </div>
+        <div class="team-tags">
+          <span class="team-tag">Content Creator</span>
+          <span class="team-tag">Digitale Plattformen</span>
+          <span class="team-tag">WP Lead L2BGreen</span>
+          <span class="team-tag">Aktiv seit 2020</span>
+        </div>
+        <div class="team-bio">Stefan treibt seit 2020 die digitale Entwicklung und Content-Strategie von Skills-UP! voran — von der Plattformentwicklung bis zur Lerninhalt-Produktion. Er verantwortet Technologie, Inhaltsarchitektur und digitale Skalierung. Lehrlings-Beirat seit 2025 auf seine Initiative hin gestartet.</div>
+        <div class="team-quote">„Skills-UP! bringt Finanzbildung dorthin, wo sie gebraucht wird: direkt in den Alltag der Berufsschule. Unser Traum? Eine generationenübergreifende Bewegung für Finanzkompetenz — powered by Lehrlinge selbst."</div>
       </div>
     </div>
   </div>
 
-  <div class="s4-footer">
-    Partner: TGW · FH Burgenland · WKO · AK Wien · Ovos · MEGA Bildungsstiftung &nbsp;·&nbsp;
-    <span>Aktiv seit 2020 · Lehrlings-Beirat seit 2025</span>
+  <div class="partner-logos">
+    <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/d9af1940-168e-468c-a6e1-9fe6705fc502/TGW-Logistics-Logo-2025.png" alt="TGW Logistics" class="partner-logo">
+    <div class="partner-divider"></div>
+    <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/1fab9992-93de-4e7e-9d59-6b1be45a6014/Hochschule_Bgld_Logo_RGB.jpg" alt="Hochschule Burgenland" class="partner-logo">
+    <div class="partner-divider"></div>
+    <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/8faa317b-14f9-41eb-bd22-1781346f5e7d/MEGA+logo.jpeg" alt="MEGA Bildungsstiftung" class="partner-logo">
+    <div class="partner-divider"></div>
+    <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/96cd4fe1-44d3-49a8-97f5-978eccb885cd/Wirtschaftskammer_O%CC%88sterreich_logo.svg+%281%29.png" alt="WKO Österreich" class="partner-logo">
+    <div class="partner-divider"></div>
+    <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/4dbaebae-3e19-4167-b5dd-71c8014da08e/Logo_Gu%CC%88tesiegel_Lern-Apps_RGB_kompakt.png" alt="Gütesiegel Lern-Apps" class="partner-logo">
+    <div class="partner-divider"></div>
+    <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/a2d1a367-f25e-41da-8880-9b5fbcecf45d/Logo+Nat.Finb._gro%C3%9F.png" alt="Nat. Finanzbildungsstrategie" class="partner-logo">
+    <div class="partner-divider"></div>
+    <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/93decb29-02f1-4a9b-a8ec-616fdf0364ce/TOP+6+Projekt.png" alt="TOP 6 Projekt" class="partner-logo">
   </div>
 </div>
 
