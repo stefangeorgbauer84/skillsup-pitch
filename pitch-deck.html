@@ -292,7 +292,7 @@ html, body {
 }
 .slide-title {
   font-family: var(--font-head); font-weight: 900;
-  font-size: clamp(1.2rem, 2.3vw, 1.7rem);
+  font-size: clamp(1.3rem, 2.5vw, 1.9rem);
   color: var(--gray-900); line-height: 1.2;
 }
 .slide-title em { color: var(--pur-700); font-style: normal; }
@@ -382,10 +382,17 @@ html, body {
   border-top: 3px solid;
   display: flex; flex-direction: column; gap: 0.6vh;
 }
-.pillar-icon { font-size: clamp(1.6rem, 2.8vw, 2.1rem); }
+.pillar-icon {
+  width: clamp(2.2rem, 3.5vw, 2.8rem);
+  height: clamp(2.2rem, 3.5vw, 2.8rem);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  margin-bottom: 0.2rem;
+}
 .pillar h3 {
   font-family: var(--font-head); font-weight: 800;
-  font-size: clamp(0.82rem, 1.3vw, 0.98rem); color: var(--gray-900);
+  font-size: clamp(0.95rem, 1.6vw, 1.18rem); color: var(--gray-900);
 }
 .pillar p {
   font-size: clamp(0.7rem, 1.05vw, 0.8rem);
@@ -447,8 +454,8 @@ html, body {
 .traction-card {
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(155,126,212,0.2);
-  border-radius: 12px; padding: 1.8vh 1.5vw;
-  display: flex; flex-direction: column; gap: 0.5vh;
+  border-radius: 12px; padding: 1.6vh 1.5vw 1.4vh;
+  display: flex; flex-direction: column; gap: 0.3vh;
 }
 .traction-card.highlight {
   background: linear-gradient(135deg, rgba(42,138,118,0.2), rgba(42,138,118,0.08));
@@ -460,14 +467,14 @@ html, body {
 }
 
 .tc-label {
-  font-size: clamp(0.6rem, 0.9vw, 0.7rem); font-weight: 800;
+  font-size: clamp(0.58rem, 0.85vw, 0.68rem); font-weight: 800;
   letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--pur-300);
+  color: var(--pur-300); margin-bottom: 0.2vh;
 }
 .tc-num {
   font-family: var(--font-head); font-weight: 900;
-  font-size: clamp(1.8rem, 3.8vw, 2.9rem);
-  line-height: 1; color: var(--white);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 0.95; color: var(--white);
 }
 .tc-num .unit { font-size: 0.45em; color: var(--pur-300); margin-left: 0.1em; }
 .tc-num .accent { color: var(--teal-400); }
@@ -555,9 +562,10 @@ html, body {
 .mf-name { font-size: clamp(0.7rem, 1.05vw, 0.82rem); color: var(--white); font-weight: 600; }
 .mf-num {
   font-family: var(--font-head); font-weight: 900;
-  font-size: clamp(0.9rem, 1.5vw, 1.1rem); color: var(--white);
+  font-size: clamp(1rem, 1.8vw, 1.35rem); color: var(--white);
   white-space: nowrap;
 }
+.mf-row.tam .mf-num { font-size: clamp(1.2rem, 2.2vw, 1.7rem); }
 .mf-row.som .mf-badge,
 .mf-row.som .mf-name,
 .mf-row.som .mf-num { color: var(--pur-900) !important; }
@@ -688,14 +696,16 @@ html, body {
   object-fit: contain; border-radius: 8px;
 }
 
-/* Problem row: left bar instead of circle */
-.prob-bar {
-  width: 4px; align-self: stretch; border-radius: 99px; flex-shrink: 0;
-  margin-top: 2px;
+/* Problem row: hero stat left column */
+.prob-big-stat {
+  font-family: var(--font-head); font-weight: 900;
+  font-size: clamp(1.8rem, 3.8vw, 3rem);
+  line-height: 1.05; flex-shrink: 0;
+  padding-top: 0.1rem;
 }
 .problem-row {
-  display: grid; grid-template-columns: 4px 1fr;
-  gap: 1.2rem; align-items: start;
+  display: grid; grid-template-columns: 1fr 2.2fr;
+  gap: 1.5rem; align-items: start;
 }
 
 /* Hook background dot grid (subtle texture) */
@@ -907,15 +917,15 @@ html, body {
 
   <div class="s2-problems">
     <div class="problem-row">
-      <div class="prob-bar" style="background:#c84040"></div>
+      <div class="prob-big-stat" style="color:#c84040">1 von 4</div>
       <div class="prob-body">
         <h3>Finanzbildung fehlt im Schulsystem komplett</h3>
         <p>Weder Berufsschule noch AHS bereiten Jugendliche auf Girokonto, Kreditfallen oder Steuern vor. Junge Menschen starten ins Berufsleben ohne grundlegendes Finanzwissen.</p>
-        <span class="highlight">1 von 4 Personen in der Schuldnerberatung ist unter 30 Jahre alt</span>
+        <span class="highlight">Personen in der Schuldnerberatung ist unter 30 Jahre alt</span>
       </div>
     </div>
     <div class="problem-row">
-      <div class="prob-bar" style="background:#d87228"></div>
+      <div class="prob-big-stat" style="color:#d87228">Platz&nbsp;#1</div>
       <div class="prob-body">
         <h3>Bestehende Angebote verfehlen die Zielgruppe</h3>
         <p>Lehrbücher, PDFs und Bankenseminare sprechen Jugendliche nicht an. Trockene Inhalte ohne Praxisbezug führen zu Desinteresse — und die Finanzindustrie verfolgt eigene Interessen.</p>
@@ -923,11 +933,11 @@ html, body {
       </div>
     </div>
     <div class="problem-row">
-      <div class="prob-bar" style="background:#4a2d8a"></div>
+      <div class="prob-big-stat" style="color:#4a2d8a">40.000</div>
       <div class="prob-body">
-        <h3>Lehrlinge sind besonders exponiert — und besonders vergessen</h3>
+        <h3>Lehrlinge — besonders exponiert, besonders vergessen</h3>
         <p>Mit dem ersten Gehalt kommen Werbung, Ratenbindung und Konsumversuchung. Azubis haben Einkommen, aber keine Kompetenzen — eine gefährliche Kombination.</p>
-        <span class="highlight" style="background:#e8e5f4;color:#4a2d8a">ca. 40.000 neue Lehrlinge pro Jahr in Österreich — ohne Finanzbildung</span>
+        <span class="highlight" style="background:#e8e5f4;color:#4a2d8a">neue Lehrlinge pro Jahr in Österreich — ohne Finanzbildung</span>
       </div>
     </div>
   </div>
@@ -946,7 +956,7 @@ html, body {
 
   <div class="pillars">
     <div class="pillar" style="border-top-color:#4a2d8a">
-      <div class="pillar-icon">🎥</div>
+      <div class="pillar-icon" style="background:#e8e5f4">🎥</div>
       <h3>Peer-Videos</h3>
       <p>Echte Lehrlinge erklären echte Finanzthemen — in ihrer Sprache, aus ihrer Erfahrung. Kein Lehrer, kein Bankberater.</p>
       <div class="pillar-tags">
@@ -955,7 +965,7 @@ html, body {
       </div>
     </div>
     <div class="pillar" style="border-top-color:#6b4db0">
-      <div class="pillar-icon">🎮</div>
+      <div class="pillar-icon" style="background:#ede9f7">🎮</div>
       <h3>Gamification</h3>
       <p>Leaderboards, Quiz-Battle, Punktesystem und Achievements machen Lernen zur echten Challenge — Motivation durch Wettbewerb.</p>
       <div class="pillar-tags">
@@ -964,7 +974,7 @@ html, body {
       </div>
     </div>
     <div class="pillar" style="border-top-color:#2a8a76">
-      <div class="pillar-icon">🎙️</div>
+      <div class="pillar-icon" style="background:#e6f4f1">🎙️</div>
       <h3>Podcast-Format</h3>
       <p>Ein Podcast-Format in Lehrlings-Sprache bringt Finanzthemen überall hin — beim Pendeln, in der Pause, im Alltag.</p>
       <div class="pillar-tags">
@@ -973,7 +983,7 @@ html, body {
       </div>
     </div>
     <div class="pillar" style="border-top-color:#3aa894">
-      <div class="pillar-icon">💻</div>
+      <div class="pillar-icon" style="background:#e0f5f1">💻</div>
       <h3>Digitale Lernplattform</h3>
       <p>Direkt in den Berufsschulalltag integriert: Lehrer verwalten Klassen, tracken Fortschritt und vergeben Zertifikate.</p>
       <div class="pillar-tags">
