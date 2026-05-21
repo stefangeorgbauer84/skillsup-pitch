@@ -825,6 +825,55 @@ html, body {
   white-space: nowrap;
 }
 
+/* ── Profile photo avatar (real photo in team cards) ── */
+.team-photo-avatar {
+  width: clamp(2.2rem, 3.5vw, 3.2rem);
+  height: clamp(2.2rem, 3.5vw, 3.2rem);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 15%;
+  flex-shrink: 0;
+  border: 2px solid rgba(155,126,212,0.35);
+}
+
+/* ── App screenshots row on solution slide ── */
+.app-screenshots {
+  display: flex; gap: 1vw;
+  flex: 1; min-height: 0;
+  align-items: stretch;
+}
+.app-screenshot-frame {
+  flex: 1; border-radius: 10px; overflow: hidden;
+  background: var(--pur-100);
+  box-shadow: 0 4px 20px rgba(74,45,138,0.18);
+  position: relative;
+}
+.app-screenshot-frame img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: top center;
+  display: block;
+}
+.app-screenshot-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(45,26,94,0.88) 0%, transparent 100%);
+  padding: 0.6rem 0.7rem 0.45rem;
+  font-size: clamp(0.55rem, 0.8vw, 0.65rem); font-weight: 700;
+  color: var(--pur-200); letter-spacing: 0.04em;
+}
+
+/* ── Phone mockup on hook slide ── */
+.hook-phone {
+  position: absolute;
+  right: 5vw; bottom: 8vh;
+  width: clamp(110px, 14vw, 180px);
+  border-radius: 20px; overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 2px rgba(155,126,212,0.2);
+  transform: rotate(3deg);
+}
+.hook-phone img {
+  width: 100%; height: auto; display: block;
+}
+
 /* ── Print ── */
 @media print {
   @page { size: 297mm 167mm; margin: 0; }
@@ -867,7 +916,7 @@ html, body {
   </div>
   <div class="s1-badges">
     <div class="s1-badge outline">Seed Pitch &nbsp;·&nbsp; 2026</div>
-    <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/bfd7d6d1-fb35-40a9-9ec2-2bff6a05c49b/top3+Skills-up.jpg" alt="Top 3 MEGA Bildungsmillion" class="s1-award-img">
+    <img src="assets/TOP+6+Projekt.webp" alt="Top 6 MEGA Bildungsmillion" class="s1-award-img">
     <div class="s1-badge filled">🇦🇹 Nat. Finanzbildungsstrategie 2026</div>
     <div class="s1-badge filled">✅ Digitales Gütesiegel</div>
   </div>
@@ -890,12 +939,13 @@ html, body {
   <div class="s1-partners">
     <div class="s1-partners-label">Partner &amp; Förderer</div>
     <div class="s1-partners-row">
-      <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/8faa317b-14f9-41eb-bd22-1781346f5e7d/MEGA+logo.jpeg" alt="MEGA Bildungsstiftung" class="s1-partner-logo mega">
-      <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/d9af1940-168e-468c-a6e1-9fe6705fc502/TGW-Logistics-Logo-2025.png" alt="TGW Logistics" class="s1-partner-logo">
-      <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/1fab9992-93de-4e7e-9d59-6b1be45a6014/Hochschule_Bgld_Logo_RGB.jpg" alt="Hochschule Burgenland" class="s1-partner-logo">
-      <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/96cd4fe1-44d3-49a8-97f5-978eccb885cd/Wirtschaftskammer_O%CC%88sterreich_logo.svg+%281%29.png" alt="WKO Österreich" class="s1-partner-logo">
-      <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/a2d1a367-f25e-41da-8880-9b5fbcecf45d/Logo+Nat.Finb._gro%C3%9F.png" alt="Nat. Finanzbildung" class="s1-partner-logo">
-      <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/4dbaebae-3e19-4167-b5dd-71c8014da08e/Logo_Gu%CC%88tesiegel_Lern-Apps_RGB_kompakt.png" alt="Gütesiegel Lern-Apps" class="s1-partner-logo">
+      <img src="assets/MEGA+logo.webp" alt="MEGA Bildungsstiftung" class="s1-partner-logo mega">
+      <img src="assets/TGW-Logistics-Logo-2025.webp" alt="TGW Logistics" class="s1-partner-logo">
+      <img src="assets/Hochschule_Bgld_Logo_RGB.webp" alt="Hochschule Burgenland" class="s1-partner-logo">
+      <img src="assets/Wirtschaftskammer_Österreich_logo.svg+(1).webp" alt="WKO Österreich" class="s1-partner-logo">
+      <img src="assets/nationale finanzbilungsstrategie.webp" alt="Nat. Finanzbildung" class="s1-partner-logo">
+      <img src="assets/Logo_Gütesiegel_Lern-Apps_RGB_kompakt.webp" alt="Gütesiegel Lern-Apps" class="s1-partner-logo">
+      <img src="assets/308197270_473949401428854_4842975165242646892_n.webp" alt="Bildungsdirektion Burgenland" class="s1-partner-logo">
     </div>
   </div>
 </div>
@@ -911,6 +961,11 @@ html, body {
     <circle cx="20" cy="18" r="2" fill="currentColor" opacity="0.3"/>
     <circle cx="56" cy="10" r="1.5" fill="currentColor" opacity="0.4"/>
   </svg>
+
+  <!-- Phone mockup — real app in use -->
+  <div class="hook-phone">
+    <img src="assets/thumbnail (1).jpeg" alt="Skills-UP! App">
+  </div>
 
   <div class="hook-kicker">Die unbequeme Wahrheit</div>
 
@@ -1033,20 +1088,20 @@ html, body {
   </div>
 
   <div class="s3-topics">
-    <div class="s3-topics-label">Lernthemen im Curriculum</div>
-    <div class="topic-chips">
-      <span class="topic-chip">💳 Girokonto &amp; Banking</span>
-      <span class="topic-chip">📉 Schuldenfallen erkennen</span>
-      <span class="topic-chip">🪙 Kryptowährungen</span>
-      <span class="topic-chip">🎯 Sparziele setzen</span>
-      <span class="topic-chip">🆘 Notgroschen aufbauen</span>
-      <span class="topic-chip">📋 Krisenbudget</span>
-      <span class="topic-chip">🏦 Ratenkauf &amp; Kredit</span>
-      <span class="topic-chip">🧾 Lohnabrechnung lesen</span>
-      <span class="topic-chip">🏠 Erste eigene Wohnung</span>
-      <span class="topic-chip">💼 Gehaltsverhandlung</span>
-      <span class="topic-chip">📊 Depotstrukturen &amp; Investieren</span>
-      <span class="topic-chip">💡 Finanzielle Selbstbestimmung</span>
+    <div class="s3-topics-label">Die Plattform in Aktion</div>
+    <div class="app-screenshots">
+      <div class="app-screenshot-frame">
+        <img src="assets/Bildschirmfoto+2025-07-17+um+08.27.51.webp" alt="Finanz-Kompass Lernpfad">
+        <div class="app-screenshot-label">Finanz-Kompass · Strukturierter Lernpfad</div>
+      </div>
+      <div class="app-screenshot-frame">
+        <img src="assets/Bildschirmfoto+2025-09-11+um+08.49.57.webp" alt="Gamification Leaderboard">
+        <div class="app-screenshot-label">Global Leaderboard · Gamification live</div>
+      </div>
+      <div class="app-screenshot-frame">
+        <img src="assets/Bildschirmfoto+2025-07-17+um+08.28.16.png" alt="Schulden-Modul">
+        <div class="app-screenshot-label">30.000 € Schulden? · Interaktives Modul</div>
+      </div>
     </div>
   </div>
 
@@ -1083,13 +1138,13 @@ html, body {
     <div class="team-row">
       <!-- Workshop photo card -->
       <div class="team-photo-card">
-        <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/0059eb0d-3954-4377-b6ea-df7f54e8bf32/IMG_5759.jpeg" alt="Skills-UP! Workshop" class="team-workshop-img">
+        <img src="assets/Top 3 MEGA groß und zentral darstellen.webp" alt="TOP 3 MEGA Bildungsmillion — € 200.000 Förderpreis" class="team-workshop-img">
         <div class="team-photo-overlay"></div>
-        <div class="team-photo-label">Skills-UP! · Workshop · Berufsschule 2026</div>
+        <div class="team-photo-label">TOP 3 · MEGA Bildungsmillion · € 200.000 Förderpreis 2025</div>
       </div>
       <div class="team-card">
         <div class="team-header">
-          <div class="team-avatar" style="background: linear-gradient(135deg, #2a8a76, #15614f)">MW</div>
+          <img src="assets/Marina profil.webp" alt="Marina Winkler" class="team-photo-avatar">
           <div class="team-header-text">
             <div class="team-role">Co-Founderin · Obfrau</div>
             <div class="team-name">Marina Winkler, MA</div>
@@ -1107,7 +1162,7 @@ html, body {
       </div>
       <div class="team-card">
         <div class="team-header">
-          <div class="team-avatar" style="background: linear-gradient(135deg, #4a2d8a, #6b4db0)">SB</div>
+          <img src="assets/Stefan Bauer Profilfoto.jpeg" alt="Dr. Stefan Bauer" class="team-photo-avatar">
           <div class="team-header-text">
             <div class="team-role">Co-Founder · Stv. Obmann</div>
             <div class="team-name">Dr. Stefan Bauer</div>
@@ -1126,19 +1181,21 @@ html, body {
   </div>
 
   <div class="partner-logos">
-    <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/d9af1940-168e-468c-a6e1-9fe6705fc502/TGW-Logistics-Logo-2025.png" alt="TGW Logistics" class="partner-logo">
+    <img src="assets/TGW-Logistics-Logo-2025.webp" alt="TGW Logistics" class="partner-logo">
     <div class="partner-divider"></div>
-    <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/1fab9992-93de-4e7e-9d59-6b1be45a6014/Hochschule_Bgld_Logo_RGB.jpg" alt="Hochschule Burgenland" class="partner-logo">
+    <img src="assets/Hochschule_Bgld_Logo_RGB.webp" alt="Hochschule Burgenland" class="partner-logo">
     <div class="partner-divider"></div>
-    <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/8faa317b-14f9-41eb-bd22-1781346f5e7d/MEGA+logo.jpeg" alt="MEGA Bildungsstiftung" class="partner-logo mega-logo">
+    <img src="assets/MEGA+logo.webp" alt="MEGA Bildungsstiftung" class="partner-logo mega-logo">
     <div class="partner-divider"></div>
-    <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/96cd4fe1-44d3-49a8-97f5-978eccb885cd/Wirtschaftskammer_O%CC%88sterreich_logo.svg+%281%29.png" alt="WKO Österreich" class="partner-logo">
+    <img src="assets/Wirtschaftskammer_Österreich_logo.svg+(1).webp" alt="WKO Österreich" class="partner-logo">
     <div class="partner-divider"></div>
-    <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/4dbaebae-3e19-4167-b5dd-71c8014da08e/Logo_Gu%CC%88tesiegel_Lern-Apps_RGB_kompakt.png" alt="Gütesiegel Lern-Apps" class="partner-logo">
+    <img src="assets/Logo_Gütesiegel_Lern-Apps_RGB_kompakt.webp" alt="Gütesiegel Lern-Apps" class="partner-logo">
     <div class="partner-divider"></div>
-    <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/a2d1a367-f25e-41da-8880-9b5fbcecf45d/Logo+Nat.Finb._gro%C3%9F.png" alt="Nat. Finanzbildungsstrategie" class="partner-logo">
+    <img src="assets/nationale finanzbilungsstrategie.webp" alt="Nat. Finanzbildungsstrategie" class="partner-logo">
     <div class="partner-divider"></div>
-    <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/93decb29-02f1-4a9b-a8ec-616fdf0364ce/TOP+6+Projekt.png" alt="TOP 6 Projekt" class="partner-logo">
+    <img src="assets/308197270_473949401428854_4842975165242646892_n.webp" alt="Bildungsdirektion Burgenland" class="partner-logo">
+    <div class="partner-divider"></div>
+    <img src="assets/TOP+6+Projekt.webp" alt="TOP 6 Projekt" class="partner-logo">
   </div>
 </div>
 
