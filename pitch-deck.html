@@ -731,6 +731,7 @@ html, body {
 /* ── Cover partner strip ── */
 .s1-partners {
   width: 100%; flex-shrink: 0; margin-top: 1.2vh;
+  margin-left: calc(-1 * clamp(160px, 20vw, 260px) / 2);
 }
 .s1-partners-label {
   font-size: clamp(0.52rem, 0.75vw, 0.62rem);
@@ -740,15 +741,16 @@ html, body {
 }
 .s1-partners-row {
   display: flex; align-items: center; justify-content: center;
-  gap: 2vw; flex-wrap: nowrap;
-  background: rgba(255,255,255,0.92);
-  border-radius: 12px; padding: 0.9vh 2vw;
+  gap: 2.5vw; flex-wrap: nowrap;
+  background: #ffffff;
+  border-radius: 0; padding: 1.6vh 5.5vw;
+  margin: 0 calc(-6vw);
 }
 .s1-partner-logo {
-  height: clamp(20px, 2.8vh, 36px); width: auto;
+  height: clamp(36px, 5.5vh, 68px); width: auto;
   object-fit: contain; flex-shrink: 0;
 }
-.s1-partner-logo.mega { height: clamp(28px, 4vh, 50px); }
+.s1-partner-logo.mega { height: clamp(50px, 7.5vh, 90px); }
 
 /* ── MEGA logo extra large on partner strip ── */
 .mega-logo { height: clamp(36px, 5.5vh, 70px) !important; }
