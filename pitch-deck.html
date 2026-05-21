@@ -22,16 +22,18 @@
   --pur-100: #e8e5f4;
   --pur-50:  #f3f1f9;
 
-  --peach: #E8956D;      /* from logo sparkle */
+  --peach: #E8956D;      /* logo sparkle — main accent */
   --peach-light: #f5c4a8;
   --peach-dark: #c97040;
 
-  --teal-700: #15614f;
-  --teal-600: #1a7a68;
-  --teal-500: #2a8a76;  /* accent-teal */
-  --teal-400: #3aa894;
-  --teal-300: #5ec4b0;
-  --teal-100: #e6f4f1;
+  /* Gradient tokens */
+  --grad-deep:    linear-gradient(150deg, #120b28 0%, #2d1a5e 55%, #3d2475 100%);
+  --grad-main:    linear-gradient(150deg, #2d1a5e 0%, #4a2d8a 100%);
+  --grad-medium:  linear-gradient(135deg, #4a2d8a 0%, #6b4db0 100%);
+  --grad-card:    linear-gradient(135deg, rgba(74,45,138,0.22) 0%, rgba(45,26,94,0.1) 100%);
+  --grad-card-hl: linear-gradient(135deg, rgba(107,77,176,0.35) 0%, rgba(74,45,138,0.18) 100%);
+  --grad-light:   linear-gradient(135deg, #f3f1f9 0%, #e8e5f4 100%);
+  --grad-peach:   linear-gradient(90deg, var(--peach), var(--peach-dark));
 
   --amber: #d87228;
   --red:   #c84040;
@@ -91,14 +93,14 @@ html, body {
   background: rgba(155,126,212,0.35); cursor: pointer;
   transition: background 0.2s, transform 0.2s;
 }
-.dot.active { background: var(--teal-400); transform: scale(1.35); }
+.dot.active { background: var(--peach); transform: scale(1.35); }
 .slide-counter { color: rgba(155,126,212,0.6); font-size: 0.72rem; min-width: 2.5rem; text-align: center; font-family: var(--font-body); }
 
 /* ══════════════════════════════════════════════
    SLIDE 1 — COVER
 ══════════════════════════════════════════════ */
 #s1 {
-  background: linear-gradient(150deg, var(--pur-900) 0%, var(--pur-700) 60%, var(--pur-800) 100%);
+  background: var(--grad-deep);
   justify-content: center; align-items: center;
   text-align: center;
   padding: 2vh 6vw 3vh;
@@ -131,7 +133,7 @@ html, body {
 .s1-eyebrow {
   font-family: var(--font-body); font-weight: 700;
   font-size: clamp(0.62rem, 0.95vw, 0.75rem);
-  letter-spacing: 0.18em; color: var(--teal-400);
+  letter-spacing: 0.18em; color: var(--peach);
   text-transform: uppercase; margin-bottom: 0.8vh;
 }
 .s1-title {
@@ -141,7 +143,7 @@ html, body {
   color: var(--white); letter-spacing: -0.02em;
   margin-bottom: 1.2vh;
 }
-.s1-title .accent { color: var(--teal-400); }
+.s1-title .accent { color: var(--peach); }
 .s1-sub {
   font-family: var(--font-head);
   font-size: clamp(1rem, 1.8vw, 1.3rem);
@@ -163,8 +165,8 @@ html, body {
   padding: 0.35rem 0.9rem; border-radius: 99px;
   letter-spacing: 0.02em;
 }
-.s1-badge.outline { border: 1.5px solid var(--teal-400); color: var(--teal-400); }
-.s1-badge.filled { background: rgba(42,138,118,0.18); color: var(--teal-300); border: none; }
+.s1-badge.outline { border: 1.5px solid var(--peach); color: var(--peach); }
+.s1-badge.filled { background: rgba(42,138,118,0.18); color: var(--pur-200); border: none; }
 
 .s1-stat-row {
   display: flex; flex-direction: row;
@@ -183,7 +185,7 @@ html, body {
   font-size: clamp(1.5rem, 3.2vw, 2.5rem);
   color: var(--white); line-height: 1;
 }
-.s1-stat-num span { color: var(--teal-400); }
+.s1-stat-num span { color: var(--peach); }
 .s1-stat-label {
   font-size: clamp(0.6rem, 0.88vw, 0.72rem);
   color: var(--pur-300); margin-top: 0.25rem; line-height: 1.35;
@@ -231,7 +233,7 @@ html, body {
   flex-shrink: 0;
 }
 .hook-headline em { color: var(--peach); font-style: normal; }
-.hook-headline .hl-teal { color: var(--teal-300); }
+.hook-headline .hl-teal { color: var(--pur-200); }
 
 .hook-stats {
   display: grid; grid-template-columns: repeat(3, 1fr);
@@ -246,14 +248,14 @@ html, body {
 .hs-box::before {
   content: ''; position: absolute;
   top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, var(--teal-500), transparent);
+  background: linear-gradient(90deg, var(--pur-500), transparent);
 }
 .hs-num {
   font-family: var(--font-head); font-weight: 900;
   font-size: clamp(2rem, 4.5vw, 3.6rem);
   color: var(--white); line-height: 1;
 }
-.hs-num .hs-accent { color: var(--teal-400); }
+.hs-num .hs-accent { color: var(--peach); }
 .hs-label {
   font-size: clamp(0.7rem, 1.05vw, 0.84rem);
   color: var(--pur-300); margin-top: 0.5rem;
@@ -269,7 +271,7 @@ html, body {
 }
 .hook-cta-bar {
   height: 2px; flex: 1;
-  background: linear-gradient(90deg, var(--teal-500), transparent);
+  background: linear-gradient(90deg, var(--pur-500), transparent);
 }
 
 /* ══════════════════════════════════════════════
@@ -348,7 +350,7 @@ html, body {
   display: flex; align-items: center; gap: 1rem;
   flex-shrink: 0;
 }
-.s2-footer strong { color: var(--teal-400); }
+.s2-footer strong { color: var(--peach); }
 
 /* ══════════════════════════════════════════════
    SLIDE 3 — ANSATZ / LÖSUNG
@@ -435,11 +437,11 @@ html, body {
    SLIDE 4 — TRACTION & TEAM
 ══════════════════════════════════════════════ */
 #s4 {
-  background: var(--pur-900);
+  background: var(--grad-main);
   padding: 3.5vh 5.5vw 0;
 }
 
-#s4 .slide-label { color: var(--teal-400); }
+#s4 .slide-label { color: var(--peach); }
 #s4 .slide-title { color: var(--white); }
 
 .traction-grid {
@@ -458,8 +460,8 @@ html, body {
   display: flex; flex-direction: column; gap: 0.3vh;
 }
 .traction-card.highlight {
-  background: linear-gradient(135deg, rgba(42,138,118,0.2), rgba(42,138,118,0.08));
-  border-color: rgba(42,138,118,0.4);
+  background: var(--grad-card-hl);
+  border-color: rgba(232,149,109,0.3);
 }
 .traction-card.accent-pur {
   background: linear-gradient(135deg, rgba(107,77,176,0.25), rgba(74,45,138,0.15));
@@ -477,7 +479,7 @@ html, body {
   line-height: 0.95; color: var(--white);
 }
 .tc-num .unit { font-size: 0.45em; color: var(--pur-300); margin-left: 0.1em; }
-.tc-num .accent { color: var(--teal-400); }
+.tc-num .accent { color: var(--peach); }
 .tc-desc {
   font-size: clamp(0.68rem, 1.05vw, 0.8rem);
   color: var(--pur-200); line-height: 1.4;
@@ -496,7 +498,7 @@ html, body {
 }
 .team-role {
   font-size: clamp(0.58rem, 0.85vw, 0.68rem); font-weight: 800;
-  color: var(--teal-400); text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--peach); text-transform: uppercase; letter-spacing: 0.1em;
 }
 .team-name {
   font-family: var(--font-head); font-weight: 800;
@@ -515,7 +517,7 @@ html, body {
 
 .s4-footer {
   background: rgba(0,0,0,0.25);
-  color: var(--teal-300); padding: 1vh 5.5vw; margin: 1.5vh -5.5vw 0;
+  color: var(--pur-200); padding: 1vh 5.5vw; margin: 1.5vh -5.5vw 0;
   font-size: clamp(0.65rem, 0.95vw, 0.75rem); font-weight: 700;
   display: flex; align-items: center; gap: 2rem; flex-shrink: 0;
 }
@@ -554,7 +556,7 @@ html, body {
 }
 .mf-row.tam { background: var(--pur-900); }
 .mf-row.sam { background: var(--pur-700); margin: 0 4%; }
-.mf-row.som { background: var(--teal-500); margin: 0 8%; border-radius: 0 0 6px 6px; }
+.mf-row.som { background: var(--grad-medium); margin: 0 8%; border-radius: 0 0 6px 6px; }
 .mf-badge {
   font-size: clamp(0.55rem, 0.82vw, 0.65rem); font-weight: 900;
   letter-spacing: 0.1em; color: rgba(255,255,255,0.6);
@@ -568,10 +570,10 @@ html, body {
 .mf-row.tam .mf-num { font-size: clamp(1.2rem, 2.2vw, 1.7rem); }
 .mf-row.som .mf-badge,
 .mf-row.som .mf-name,
-.mf-row.som .mf-num { color: var(--pur-900) !important; }
+.mf-row.som .mf-num { color: var(--white) !important; }
 
 .funding-box {
-  background: linear-gradient(135deg, var(--pur-50), var(--teal-100));
+  background: var(--grad-light);
   border: 1.5px solid var(--pur-200); border-radius: 12px;
   padding: 1.5vh 1.4vw; flex: 1;
 }
@@ -633,7 +635,7 @@ html, body {
 }
 .vision-label {
   font-size: clamp(0.6rem, 0.88vw, 0.7rem); font-weight: 800;
-  color: var(--teal-400); text-transform: uppercase;
+  color: var(--peach); text-transform: uppercase;
   letter-spacing: 0.12em; margin-bottom: 0.5rem;
 }
 .vision-text {
@@ -641,7 +643,7 @@ html, body {
   font-size: clamp(0.85rem, 1.45vw, 1.05rem);
   color: var(--white); line-height: 1.4;
 }
-.vision-text em { color: var(--teal-300); font-style: normal; }
+.vision-text em { color: var(--pur-200); font-style: normal; }
 
 .s5-footer {
   background: var(--pur-700); color: var(--white);
@@ -650,7 +652,7 @@ html, body {
   display: flex; align-items: center; justify-content: space-between;
   flex-shrink: 0;
 }
-.s5-footer a { color: var(--teal-300); text-decoration: none; }
+.s5-footer a { color: var(--pur-200); text-decoration: none; }
 
 /* ── Sparkle deco (brand motif from logo) ── */
 .sparkle-deco {
@@ -675,14 +677,14 @@ html, body {
 /* Stat box accent variants */
 .hs-box:nth-child(1)::before { background: linear-gradient(90deg, var(--peach), transparent); }
 .hs-box:nth-child(2)::before { background: linear-gradient(90deg, var(--pur-400), transparent); }
-.hs-box:nth-child(3)::before { background: linear-gradient(90deg, var(--teal-500), transparent); }
+.hs-box:nth-child(3)::before { background: linear-gradient(90deg, var(--pur-500), transparent); }
 
 /* Slide label accent dot */
 .slide-label::before {
   content: '';
   display: inline-block;
   width: 0.5rem; height: 0.5rem; border-radius: 50%;
-  background: var(--teal-400);
+  background: var(--peach);
   margin-right: 0.5rem; vertical-align: middle;
   flex-shrink: 0;
 }
@@ -726,6 +728,31 @@ html, body {
   font-style: italic;
 }
 
+/* ── Cover partner strip ── */
+.s1-partners {
+  width: 100%; flex-shrink: 0; margin-top: 1.8vh;
+}
+.s1-partners-label {
+  font-size: clamp(0.52rem, 0.75vw, 0.62rem);
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(197,179,232,0.45); text-align: center;
+  margin-bottom: 0.7vh; font-weight: 700;
+}
+.s1-partners-row {
+  display: flex; align-items: center; justify-content: center;
+  gap: 2vw; flex-wrap: nowrap;
+  background: rgba(255,255,255,0.92);
+  border-radius: 12px; padding: 0.9vh 2vw;
+}
+.s1-partner-logo {
+  height: clamp(20px, 2.8vh, 36px); width: auto;
+  object-fit: contain; flex-shrink: 0;
+}
+.s1-partner-logo.mega { height: clamp(28px, 4vh, 50px); }
+
+/* ── MEGA logo extra large on partner strip ── */
+.mega-logo { height: clamp(36px, 5.5vh, 70px) !important; }
+
 /* ── Team photo ── */
 .team-photo-card {
   border-radius: 12px; overflow: hidden;
@@ -745,7 +772,7 @@ html, body {
   position: absolute; bottom: 0; left: 0; right: 0;
   padding: 0.8rem 1rem;
   font-size: clamp(0.6rem, 0.9vw, 0.72rem); font-weight: 700;
-  color: var(--teal-300); letter-spacing: 0.05em;
+  color: var(--pur-200); letter-spacing: 0.05em;
 }
 
 /* ── Partner logo strip (bigger) ── */
@@ -831,15 +858,15 @@ html, body {
     <path d="M30 3 L32.5 27.5 L57 30 L32.5 32.5 L30 57 L27.5 32.5 L3 30 L27.5 27.5 Z" fill="currentColor"/>
   </svg>
   <img src="logo.png" alt="Skills-UP! Logo" class="s1-logo">
-  <div class="s1-eyebrow">Verein zur Entwicklung der digitalen Zukunftsbildung</div>
+  <div class="s1-eyebrow">Gemeinnütziger Verein · Digitale Zukunftsbildung · Seit 2022</div>
   <div class="s1-title">Skills-UP<span class="accent">!</span></div>
-  <div class="s1-sub">Von Lehrlingen, für Lehrlinge.</div>
+  <div class="s1-sub">Finanzbildung für Österreichs Lehrlinge — peer-to-peer, gamifiziert, wirksam.</div>
   <div class="s1-tagline">
-    Die erste gamifizierte Finanzbildungsplattform, die Jugendliche in der Berufsschule
-    erreicht — peer-to-peer, praxisnah und nachhaltig wirksam.
+    Wir schließen die größte Bildungslücke der Berufsschule: Finanzkompetenz.
+    Bereits 1.830 erreichte Jugendliche · 90 % verändern ihr Finanzverhalten dauerhaft.
   </div>
   <div class="s1-badges">
-    <div class="s1-badge outline">Pitch &nbsp;·&nbsp; 2026</div>
+    <div class="s1-badge outline">Seed Pitch &nbsp;·&nbsp; 2026</div>
     <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/bfd7d6d1-fb35-40a9-9ec2-2bff6a05c49b/top3+Skills-up.jpg" alt="Top 3 MEGA Bildungsmillion" class="s1-award-img">
     <div class="s1-badge filled">🇦🇹 Nat. Finanzbildungsstrategie 2026</div>
     <div class="s1-badge filled">✅ Digitales Gütesiegel</div>
@@ -848,7 +875,7 @@ html, body {
   <div class="s1-stat-row">
     <div class="s1-stat">
       <div class="s1-stat-num"><span>443</span></div>
-      <div class="s1-stat-label">Lehrlinge direkt<br>erreicht seit 2022</div>
+      <div class="s1-stat-label">Lehrlinge direkt<br>erreicht · seit 2022</div>
     </div>
     <div class="s1-stat">
       <div class="s1-stat-num"><span>1.830</span></div>
@@ -857,6 +884,18 @@ html, body {
     <div class="s1-stat">
       <div class="s1-stat-num"><span>90</span>%</div>
       <div class="s1-stat-label">verändertes<br>Finanzverhalten</div>
+    </div>
+  </div>
+
+  <div class="s1-partners">
+    <div class="s1-partners-label">Partner &amp; Förderer</div>
+    <div class="s1-partners-row">
+      <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/8faa317b-14f9-41eb-bd22-1781346f5e7d/MEGA+logo.jpeg" alt="MEGA Bildungsstiftung" class="s1-partner-logo mega">
+      <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/d9af1940-168e-468c-a6e1-9fe6705fc502/TGW-Logistics-Logo-2025.png" alt="TGW Logistics" class="s1-partner-logo">
+      <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/1fab9992-93de-4e7e-9d59-6b1be45a6014/Hochschule_Bgld_Logo_RGB.jpg" alt="Hochschule Burgenland" class="s1-partner-logo">
+      <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/96cd4fe1-44d3-49a8-97f5-978eccb885cd/Wirtschaftskammer_O%CC%88sterreich_logo.svg+%281%29.png" alt="WKO Österreich" class="s1-partner-logo">
+      <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/a2d1a367-f25e-41da-8880-9b5fbcecf45d/Logo+Nat.Finb._gro%C3%9F.png" alt="Nat. Finanzbildung" class="s1-partner-logo">
+      <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/4dbaebae-3e19-4167-b5dd-71c8014da08e/Logo_Gu%CC%88tesiegel_Lern-Apps_RGB_kompakt.png" alt="Gütesiegel Lern-Apps" class="s1-partner-logo">
     </div>
   </div>
 </div>
@@ -899,7 +938,7 @@ html, body {
   <div class="hook-cta">
     <div class="hook-cta-bar"></div>
     Skills-UP! schließt diese Lücke — für Österreichs Lehrlinge.
-    <div class="hook-cta-bar" style="background: linear-gradient(90deg, transparent, var(--teal-500))"></div>
+    <div class="hook-cta-bar" style="background: linear-gradient(90deg, transparent, var(--pur-500))"></div>
   </div>
 </div>
 
@@ -907,7 +946,7 @@ html, body {
 <div class="slide" id="s2">
   <div class="slide-header">
     <div class="slide-label">Das Problem</div>
-    <div class="slide-title">Jugendliche landen in der Schuldenfalle — <em>weil niemand sie vorbereitet.</em></div>
+    <div class="slide-title">Jedes Jahr starten 40.000 Lehrlinge in Österreich — <em>ohne ein einziges Finanzbildungsfach.</em></div>
   </div>
 
   <div class="s2-story">
@@ -951,7 +990,7 @@ html, body {
 <div class="slide" id="s3">
   <div class="slide-header">
     <div class="slide-label">Unser Ansatz</div>
-    <div class="slide-title">Skills-UP! macht Finanzbildung <em>relevant, erlebbar &amp; peer-to-peer.</em></div>
+    <div class="slide-title">Die Plattform, die Lehrlinge <em>wirklich erreicht</em> — von Lehrlingen erklärt, digital skaliert.</div>
   </div>
 
   <div class="pillars">
@@ -973,22 +1012,22 @@ html, body {
         <span class="tag" style="background:#e8e5f4;color:#6b4db0">Quiz-Duelle</span>
       </div>
     </div>
-    <div class="pillar" style="border-top-color:#2a8a76">
+    <div class="pillar" style="border-top-color:#6b4db0">
       <div class="pillar-icon" style="background:#e6f4f1">🎙️</div>
       <h3>Podcast-Format</h3>
       <p>Ein Podcast-Format in Lehrlings-Sprache bringt Finanzthemen überall hin — beim Pendeln, in der Pause, im Alltag.</p>
       <div class="pillar-tags">
-        <span class="tag" style="background:#e6f4f1;color:#2a8a76">On-the-go</span>
-        <span class="tag" style="background:#e6f4f1;color:#2a8a76">Alltagsnah</span>
+        <span class="tag" style="background:#ede9f7;color:#5c3da0">On-the-go</span>
+        <span class="tag" style="background:#ede9f7;color:#5c3da0">Alltagsnah</span>
       </div>
     </div>
-    <div class="pillar" style="border-top-color:#3aa894">
-      <div class="pillar-icon" style="background:#e0f5f1">💻</div>
+    <div class="pillar" style="border-top-color:#8466c4">
+      <div class="pillar-icon" style="background:#ede9f7">💻</div>
       <h3>Digitale Lernplattform</h3>
       <p>Direkt in den Berufsschulalltag integriert: Lehrer verwalten Klassen, tracken Fortschritt und vergeben Zertifikate.</p>
       <div class="pillar-tags">
-        <span class="tag" style="background:#e6f4f1;color:#1a7a68">Messbar</span>
-        <span class="tag" style="background:#e6f4f1;color:#1a7a68">Skalierbar</span>
+        <span class="tag" style="background:#e8e5f4;color:#4a2d8a">Messbar</span>
+        <span class="tag" style="background:#e8e5f4;color:#4a2d8a">Skalierbar</span>
       </div>
     </div>
   </div>
@@ -1020,8 +1059,8 @@ html, body {
 <!-- ══ SLIDE 4 — TRACTION & TEAM ══ -->
 <div class="slide" id="s4">
   <div class="slide-header">
-    <div class="slide-label">Traction &amp; Team</div>
-    <div class="slide-title">Bewährt in der Praxis — ausgezeichnet auf Bundesebene.</div>
+    <div class="slide-label">Traction &amp; Team · Seit 2022 · Gemeinnütziger Verein</div>
+    <div class="slide-title">4 Jahre Impact — ausgezeichnet, zertifiziert, skalierbar.</div>
   </div>
 
   <div class="traction-grid">
@@ -1091,7 +1130,7 @@ html, body {
     <div class="partner-divider"></div>
     <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/1fab9992-93de-4e7e-9d59-6b1be45a6014/Hochschule_Bgld_Logo_RGB.jpg" alt="Hochschule Burgenland" class="partner-logo">
     <div class="partner-divider"></div>
-    <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/8faa317b-14f9-41eb-bd22-1781346f5e7d/MEGA+logo.jpeg" alt="MEGA Bildungsstiftung" class="partner-logo">
+    <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/8faa317b-14f9-41eb-bd22-1781346f5e7d/MEGA+logo.jpeg" alt="MEGA Bildungsstiftung" class="partner-logo mega-logo">
     <div class="partner-divider"></div>
     <img src="https://images.squarespace-cdn.com/content/v1/687343b77b2ed84dc3dd21be/96cd4fe1-44d3-49a8-97f5-978eccb885cd/Wirtschaftskammer_O%CC%88sterreich_logo.svg+%281%29.png" alt="WKO Österreich" class="partner-logo">
     <div class="partner-divider"></div>
@@ -1107,7 +1146,7 @@ html, body {
 <div class="slide" id="s5">
   <div class="slide-header">
     <div class="slide-label">Markt &amp; Finanzierung</div>
-    <div class="slide-title">Klarer Markt, skalierbares Modell — <em>wir brauchen jetzt Turbo.</em></div>
+    <div class="slide-title">€ 4,2 Mrd. Markt · SaaS-Modell · <em>Wir sind bereit für die nächste Stufe.</em></div>
   </div>
 
   <div class="s5-grid">
@@ -1138,7 +1177,7 @@ html, body {
         <div class="funding-ask">€ 94.500 <sub>zugesagt</sub></div>
         <div class="funding-use">
           <div class="fu-row"><div class="fu-dot" style="background:#4a2d8a"></div><strong>MEGA Bildungsstiftung</strong> · € 66.000 (66 %)</div>
-          <div class="fu-row"><div class="fu-dot" style="background:#2a8a76"></div>Öffentl. Mittel / Marktplatz Lern-Apps · € 18.000</div>
+          <div class="fu-row"><div class="fu-dot" style="background:#4a2d8a"></div>Öffentl. Mittel / Marktplatz Lern-Apps · € 18.000</div>
           <div class="fu-row"><div class="fu-dot" style="background:#6b4db0"></div>Dienstleistungserlöse / Partner · € 10.500</div>
           <div class="fu-row"><div class="fu-dot" style="background:#9b7ed4"></div>Offen / weitere Förderungen · € 5.500</div>
         </div>
@@ -1156,7 +1195,7 @@ html, body {
             </div>
             <div class="rev-price">€ 299 / Mo.</div>
           </div>
-          <div class="rev-card" style="border-left-color:#2a8a76">
+          <div class="rev-card" style="border-left-color:#4a2d8a">
             <div class="rev-card-body">
               <h5>B2C — Freemium</h5>
               <div class="rev-detail">Basisinhalte kostenlos · Pro-Zugang für alle</div>
@@ -1180,7 +1219,7 @@ html, body {
           „Financial &amp; Digital Literacy" an BHAK · Ministeriums-Budget für Lern-Apps
         </div>
         <div style="margin-top:0.9rem;display:flex;flex-direction:column;gap:0.35rem;">
-          <div style="font-size:clamp(0.62rem,0.9vw,0.72rem);color:var(--teal-300);font-weight:700;">Ziele bis Ende 2027</div>
+          <div style="font-size:clamp(0.62rem,0.9vw,0.72rem);color:var(--pur-200);font-weight:700;">Ziele bis Ende 2027</div>
           <div style="font-size:clamp(0.62rem,0.9vw,0.72rem);color:var(--pur-200);line-height:1.45;">
             740 direkt erreichte Lehrlinge &nbsp;·&nbsp; 42 Pädagog:innen &nbsp;·&nbsp; +25 % Inhalte &nbsp;·&nbsp; Train-the-Trainer
           </div>
