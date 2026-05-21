@@ -948,6 +948,7 @@ html, body {
 .slide.active .geschichte-body     { animation: fadeUp 0.42s ease 0.10s both; }
 .slide.active .wirkung-grid        { animation: fadeUp 0.42s ease 0.10s both; }
 .slide.active .roadmap-body        { animation: fadeUp 0.42s ease 0.10s both; }
+.slide.active .quellen-grid        { animation: fadeUp 0.42s ease 0.10s both; }
 .slide.active .s1-logo             { animation: fadeUp 0.45s ease 0s    both; }
 .slide.active .s1-title            { animation: fadeUp 0.48s ease 0.06s both; }
 .slide.active .s1-sub              { animation: fadeUp 0.4s  ease 0.12s both; }
@@ -1249,6 +1250,61 @@ html, body {
   display: flex; align-items: center; gap: 1.5rem; flex-shrink: 0;
 }
 .roadmap-footer span { color: var(--peach); }
+
+/* ══════════════════════════════════════════════
+   SLIDE — QUELLENVERZEICHNIS
+══════════════════════════════════════════════ */
+#s-quellen {
+  background: var(--white);
+  padding: 3.5vh 5.5vw 0;
+}
+
+.quellen-grid {
+  display: grid; grid-template-columns: 1.05fr 0.95fr;
+  gap: 2.5vw; flex: 1; min-height: 0;
+  margin-top: 1.8vh;
+}
+.quellen-right { display: flex; flex-direction: column; gap: 1.5vh; }
+
+.quellen-group { display: flex; flex-direction: column; gap: 0.7vh; }
+.qg-label {
+  font-family: var(--font-body); font-weight: 800;
+  font-size: clamp(0.58rem, 0.85vw, 0.67rem);
+  text-transform: uppercase; letter-spacing: 0.13em;
+  color: var(--pur-500); padding-bottom: 0.4vh;
+  border-bottom: 1.5px solid var(--pur-100);
+  margin-bottom: 0.2vh;
+}
+.qg-list { display: flex; flex-direction: column; gap: 0.55vh; }
+
+.q-row {
+  display: flex; gap: 0.7rem; align-items: flex-start;
+}
+.q-num {
+  width: 1.4rem; height: 1.4rem; border-radius: 50%; flex-shrink: 0;
+  background: var(--pur-100); color: var(--pur-600);
+  font-family: var(--font-head); font-weight: 900;
+  font-size: clamp(0.52rem, 0.75vw, 0.6rem);
+  display: flex; align-items: center; justify-content: center;
+  margin-top: 0.1rem;
+}
+.q-body {
+  font-size: clamp(0.62rem, 0.9vw, 0.72rem);
+  color: var(--gray-700); line-height: 1.45; flex: 1;
+}
+.q-body strong { color: var(--gray-900); font-weight: 700; }
+.q-url {
+  display: block; font-size: clamp(0.55rem, 0.78vw, 0.62rem);
+  color: var(--pur-400); font-style: italic; margin-top: 0.1rem;
+}
+
+.quellen-footer {
+  background: var(--pur-50); color: var(--gray-600);
+  padding: 1vh 5.5vw; margin: 1.5vh -5.5vw 0;
+  font-size: clamp(0.6rem, 0.88vw, 0.7rem);
+  display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0;
+  border-top: 1.5px solid var(--pur-100);
+}
 
 /* ── Source / citation notes ── */
 .source-note {
@@ -2005,6 +2061,57 @@ html, body {
     </span>
     <span>info@digitale-zukunftsbildung.eu</span>
     <a href="https://www.digitale-zukunftsbildung.eu/" target="_blank">digitale-zukunftsbildung.eu</a>
+  </div>
+</div>
+
+<!-- ══ SLIDE — QUELLENVERZEICHNIS ══ -->
+<div class="slide" id="s-quellen">
+  <div class="slide-header">
+    <div class="slide-label">Quellenverzeichnis</div>
+    <div class="slide-title">Alle zitierten Quellen im Überblick</div>
+  </div>
+
+  <div class="quellen-grid">
+
+    <div class="quellen-group">
+      <div class="qg-label">Externe Statistiken &amp; Behörden</div>
+      <div class="qg-list">
+        <div class="q-row"><span class="q-num">1</span><div class="q-body"><strong>ASB Schuldnerberatungen Österreich</strong><br>Jahresbericht 2024 — Altersstruktur Schuldnerberatungsklientel<br><span class="q-url">asb-schuldnerberatung.at</span></div></div>
+        <div class="q-row"><span class="q-num">2</span><div class="q-body"><strong>WKO — Wirtschaftskammer Österreich</strong><br>Lehrlingsstatistik 2024 — Anzahl aktiver Lehrverhältnisse in Österreich<br><span class="q-url">wko.at/lehrlingsstatistik</span></div></div>
+        <div class="q-row"><span class="q-num">3</span><div class="q-body"><strong>BMBWF — Bundesministerium für Bildung, Wissenschaft und Forschung</strong><br>Lehrplanverordnung Berufsschulen AT, 2024 — Pflichtfächerstruktur<br><span class="q-url">bmbwf.gv.at</span></div></div>
+        <div class="q-row"><span class="q-num">4</span><div class="q-body"><strong>Statistik Austria</strong><br>Überschuldungsstatistik 2023 — Ursachen und Altersgruppen<br><span class="q-url">statistik.at</span></div></div>
+        <div class="q-row"><span class="q-num">5</span><div class="q-body"><strong>OECD/INFE</strong><br>International Financial Literacy Framework, 2023<br><span class="q-url">oecd.org/financial/education</span></div></div>
+        <div class="q-row"><span class="q-num">6</span><div class="q-body"><strong>BMBWF — Marktplatz Lern-Apps</strong><br>Lizenzauswertung Skills-UP!, 2025 — Anzahl aktivierter Lizenzen<br><span class="q-url">lernapp.at</span></div></div>
+      </div>
+    </div>
+
+    <div class="quellen-right">
+      <div class="quellen-group">
+        <div class="qg-label">Marktdaten</div>
+        <div class="qg-list">
+          <div class="q-row"><span class="q-num">7</span><div class="q-body"><strong>HolonIQ</strong><br>European EdTech Market Report 2024 — TAM EdTech DACH<br><span class="q-url">holoniq.com</span></div></div>
+          <div class="q-row"><span class="q-num">8</span><div class="q-body"><strong>Statista</strong><br>EdTech DACH Market Report 2024 — Segment Financial Literacy B2B + B2C<br><span class="q-url">statista.com</span></div></div>
+          <div class="q-row"><span class="q-num">9</span><div class="q-body"><strong>SOM — Eigene Schätzung</strong><br>Basis: WKO Lehrlingsdaten + BMBWF Berufsschulbudget 2024 · Methode auf Anfrage<br><span class="q-url">—</span></div></div>
+        </div>
+      </div>
+
+      <div class="quellen-group">
+        <div class="qg-label">Interne Daten &amp; Evaluierung</div>
+        <div class="qg-list">
+          <div class="q-row"><span class="q-num">10</span><div class="q-body"><strong>Interne Evaluierung Skills-UP!</strong><br>Pre/Post-Befragung + 3-Monats Follow-up, n = 443, 2022–2025 · Methodenpapier verfügbar<br><span class="q-url">Auf Anfrage: info@digitale-zukunftsbildung.eu</span></div></div>
+          <div class="q-row"><span class="q-num">11</span><div class="q-body"><strong>Hochschule Burgenland</strong><br>Begleitforschung Skills-UP!, 2025 · Publikation geplant 2026<br><span class="q-url">fh-burgenland.at</span></div></div>
+          <div class="q-row"><span class="q-num">12</span><div class="q-body"><strong>Vereinsdokumentation Skills-UP!</strong><br>Jahresabschluss 2025 — Budget, Reichweite, Personalstand<br><span class="q-url">Auf Anfrage: info@digitale-zukunftsbildung.eu</span></div></div>
+          <div class="q-row"><span class="q-num">13</span><div class="q-body"><strong>Interne Projektplanung Skills-UP!</strong><br>Wachstumsziele &amp; Cost-per-Impact-Kalkulation, Mai 2026 · Methode: Gesamtbudget ÷ direkt erreichte Jugendliche<br><span class="q-url">Auf Anfrage: info@digitale-zukunftsbildung.eu</span></div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="quellen-footer">
+    Vollständige Quelldokumentation und Methodenpapiere auf Anfrage &nbsp;·&nbsp;
+    <strong>info@digitale-zukunftsbildung.eu</strong> &nbsp;·&nbsp;
+    <a href="https://www.digitale-zukunftsbildung.eu/" target="_blank" style="color:var(--pur-500)">digitale-zukunftsbildung.eu</a>
   </div>
 </div>
 
