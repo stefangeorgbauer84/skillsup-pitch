@@ -2132,7 +2132,7 @@ html, body {
   <button id="prevBtn" onclick="navigate(-1)" disabled>&#8592;</button>
   <div class="dots" id="dots"></div>
   <button id="nextBtn" onclick="navigate(1)">&#8594;</button>
-  <span class="slide-counter" id="counter">1 / 5</span>
+  <span class="slide-counter" id="counter">1 / 11</span>
 </div>
 
 <script>
@@ -2148,6 +2148,7 @@ slides.forEach((_, i) => {
   dotsEl.appendChild(d);
 });
 document.getElementById('sideLeft').classList.add('disabled');
+document.getElementById('counter').textContent = '1 / ' + total;
 
 function goTo(n) {
   slides[cur].classList.remove('active');
