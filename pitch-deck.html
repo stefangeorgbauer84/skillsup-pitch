@@ -374,10 +374,8 @@ html, body {
 }
 
 .pillars {
-  display: grid; grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 1vw 1.2vw; flex-shrink: 0;
-  max-height: clamp(180px, 30vh, 240px);
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1.2vw; flex: 1; min-height: 0;
 }
 .pillar {
   background: var(--white); border-radius: 12px;
@@ -411,8 +409,7 @@ html, body {
 }
 
 .s3-topics {
-  margin-top: 1.5vh; flex: 1; min-height: 0;
-  display: flex; flex-direction: column; gap: 0.6vh;
+  margin-top: 1.8vh; flex-shrink: 0;
 }
 .s3-topics-label {
   font-family: var(--font-body); font-weight: 800;
@@ -450,10 +447,10 @@ html, body {
 .traction-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto auto auto;
-  gap: 1.2vh 1.5vw;
+  grid-template-rows: auto 1fr;
+  gap: 1.5vh 1.5vw;
   flex: 1; min-height: 0;
-  margin-top: 1.5vh;
+  margin-top: 2vh;
 }
 
 .traction-card {
@@ -828,6 +825,107 @@ html, body {
   white-space: nowrap;
 }
 
+/* ══════════════════════════════════════════════
+   SLIDE 5 — PRODUKT / SCREENSHOTS
+══════════════════════════════════════════════ */
+#s-produkt {
+  background: linear-gradient(155deg, #120b28 0%, #2d1a5e 55%, #1a1040 100%);
+  padding: 3.5vh 5.5vw 0;
+}
+#s-produkt .slide-label { color: var(--peach); }
+#s-produkt .slide-title { color: var(--white); }
+
+.produkt-screens {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 2vw; flex: 1; min-height: 0; margin-top: 2.5vh;
+}
+.produkt-screen-card {
+  border-radius: 14px; overflow: hidden;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(155,126,212,0.18);
+  display: flex; flex-direction: column;
+  box-shadow: 0 12px 45px rgba(0,0,0,0.5), 0 0 0 1px rgba(155,126,212,0.08);
+  transition: transform 0.22s, box-shadow 0.22s;
+}
+.produkt-screen-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.55), 0 0 0 1px rgba(155,126,212,0.2);
+}
+.produkt-screen-img { flex: 1; min-height: 0; overflow: hidden; }
+.produkt-screen-img img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: top center; display: block;
+}
+.produkt-screen-label {
+  padding: 1vh 1.2vw;
+  font-family: var(--font-body); font-size: clamp(0.68rem, 1.05vw, 0.8rem);
+  font-weight: 700; color: var(--pur-200);
+  border-top: 1px solid rgba(155,126,212,0.15);
+  flex-shrink: 0; background: rgba(0,0,0,0.18);
+  letter-spacing: 0.02em;
+}
+.produkt-footer {
+  background: rgba(0,0,0,0.22); color: var(--pur-300);
+  padding: 1vh 5.5vw; margin: 1.5vh -5.5vw 0;
+  font-size: clamp(0.65rem, 0.95vw, 0.75rem); font-weight: 700;
+  display: flex; align-items: center; gap: 1.5rem; flex-shrink: 0;
+}
+.produkt-footer span { color: var(--pur-400); font-weight: 400; }
+
+/* ══════════════════════════════════════════════
+   SLIDE 6 — GESCHICHTE / TIMELINE
+══════════════════════════════════════════════ */
+#s-geschichte {
+  background: var(--grad-main);
+  padding: 3.5vh 5.5vw 0;
+}
+#s-geschichte .slide-label { color: var(--peach); }
+#s-geschichte .slide-title { color: var(--white); }
+
+.geschichte-body {
+  flex: 1; min-height: 0; display: flex; flex-direction: column;
+  gap: 1.5vh; margin-top: 2vh;
+}
+.geschichte-timeline-card {
+  flex: 1; min-height: 0; border-radius: 14px; overflow: hidden;
+  background: #fff;
+  box-shadow: 0 14px 55px rgba(0,0,0,0.45);
+  display: flex; align-items: center; justify-content: center;
+}
+.geschichte-timeline-card img {
+  width: 100%; height: 100%;
+  object-fit: contain; object-position: center; display: block;
+}
+.geschichte-milestones {
+  display: grid; grid-template-columns: repeat(6, 1fr);
+  gap: 1vw; flex-shrink: 0;
+}
+.ms-box {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(155,126,212,0.2);
+  border-radius: 10px; padding: 1vh 0.8vw; text-align: center;
+}
+.ms-box.hero {
+  background: rgba(232,149,109,0.12);
+  border-color: rgba(232,149,109,0.4);
+}
+.ms-year {
+  font-family: var(--font-head); font-weight: 900;
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  color: var(--peach); line-height: 1;
+}
+.ms-text {
+  font-size: clamp(0.58rem, 0.85vw, 0.68rem);
+  color: var(--pur-200); line-height: 1.4; margin-top: 0.3rem;
+}
+.geschichte-footer {
+  background: rgba(0,0,0,0.22); color: var(--pur-200);
+  padding: 1vh 5.5vw; margin: 1.5vh -5.5vw 0;
+  font-size: clamp(0.65rem, 0.95vw, 0.75rem); font-weight: 700;
+  display: flex; align-items: center; gap: 2rem; flex-shrink: 0;
+}
+.geschichte-footer span { color: var(--peach); }
+
 /* ══ NEXT-LEVEL UPGRADES ══════════════════════════════ */
 
 /* ── Slide entrance animation ── */
@@ -846,6 +944,8 @@ html, body {
 .slide.active .hook-stats          { animation: fadeUp 0.4s  ease 0.14s both; }
 .slide.active .hook-cta            { animation: fadeUp 0.36s ease 0.22s both; }
 .slide.active .s5-grid             { animation: fadeUp 0.42s ease 0.10s both; }
+.slide.active .produkt-screens     { animation: fadeUp 0.42s ease 0.10s both; }
+.slide.active .geschichte-body     { animation: fadeUp 0.42s ease 0.10s both; }
 .slide.active .s1-logo             { animation: fadeUp 0.45s ease 0s    both; }
 .slide.active .s1-title            { animation: fadeUp 0.48s ease 0.06s both; }
 .slide.active .s1-sub              { animation: fadeUp 0.4s  ease 0.12s both; }
@@ -1172,20 +1272,20 @@ html, body {
   </div>
 
   <div class="s3-topics">
-    <div class="s3-topics-label">Die Plattform in Aktion</div>
-    <div class="app-screenshots">
-      <div class="app-screenshot-frame">
-        <img src="assets/Bildschirmfoto+2025-07-17+um+08.27.51.webp" alt="Finanz-Kompass Lernpfad">
-        <div class="app-screenshot-label">Finanz-Kompass · Strukturierter Lernpfad</div>
-      </div>
-      <div class="app-screenshot-frame">
-        <img src="assets/Bildschirmfoto+2025-09-11+um+08.49.57.webp" alt="Gamification Leaderboard">
-        <div class="app-screenshot-label">Global Leaderboard · Gamification live</div>
-      </div>
-      <div class="app-screenshot-frame">
-        <img src="assets/Bildschirmfoto+2025-07-17+um+08.28.16.png" alt="Schulden-Modul">
-        <div class="app-screenshot-label">30.000 € Schulden? · Interaktives Modul</div>
-      </div>
+    <div class="s3-topics-label">Lernthemen im Curriculum</div>
+    <div class="topic-chips">
+      <span class="topic-chip">💳 Girokonto &amp; Banking</span>
+      <span class="topic-chip">📉 Schuldenfallen erkennen</span>
+      <span class="topic-chip">🪙 Kryptowährungen</span>
+      <span class="topic-chip">🎯 Sparziele setzen</span>
+      <span class="topic-chip">🆘 Notgroschen aufbauen</span>
+      <span class="topic-chip">📋 Krisenbudget</span>
+      <span class="topic-chip">🏦 Ratenkauf &amp; Kredit</span>
+      <span class="topic-chip">🧾 Lohnabrechnung lesen</span>
+      <span class="topic-chip">🏠 Erste eigene Wohnung</span>
+      <span class="topic-chip">💼 Gehaltsverhandlung</span>
+      <span class="topic-chip">📊 Investieren &amp; Depot</span>
+      <span class="topic-chip">💡 Finanzielle Selbstbestimmung</span>
     </div>
   </div>
 
@@ -1195,7 +1295,86 @@ html, body {
   </div>
 </div>
 
-<!-- ══ SLIDE 4 — TRACTION & TEAM ══ -->
+<!-- ══ SLIDE 5 — PRODUKT ══ -->
+<div class="slide" id="s-produkt">
+  <div class="slide-header">
+    <div class="slide-label">Das Produkt</div>
+    <div class="slide-title">Eine Plattform — digital, interaktiv, <em>messbar wirksam.</em></div>
+  </div>
+
+  <div class="produkt-screens">
+    <div class="produkt-screen-card">
+      <div class="produkt-screen-img">
+        <img src="assets/Bildschirmfoto+2025-07-17+um+08.27.51.webp" alt="Finanz-Kompass Lernpfad">
+      </div>
+      <div class="produkt-screen-label">🗺️ Finanz-Kompass — strukturierter Lernpfad</div>
+    </div>
+    <div class="produkt-screen-card">
+      <div class="produkt-screen-img">
+        <img src="assets/Bildschirmfoto+2025-09-11+um+08.49.57.webp" alt="Global Leaderboard Gamification">
+      </div>
+      <div class="produkt-screen-label">🏆 Global Leaderboard — Gamification live</div>
+    </div>
+    <div class="produkt-screen-card">
+      <div class="produkt-screen-img">
+        <img src="assets/Bildschirmfoto+2025-07-17+um+08.28.16.png" alt="Interaktives Schulden-Modul">
+      </div>
+      <div class="produkt-screen-label">💸 30.000 € Schulden? — Interaktives Modul</div>
+    </div>
+  </div>
+
+  <div class="produkt-footer">
+    <span>Technologie &amp; Zertifizierung:</span>
+    Ovos · WKO-akkreditiert · Güte Siegel Lern-Apps · Ministeriums-Marktplatz · Nat. Finanzbildungsstrategie 2026
+  </div>
+</div>
+
+<!-- ══ SLIDE 6 — GESCHICHTE / TIMELINE ══ -->
+<div class="slide" id="s-geschichte">
+  <div class="slide-header">
+    <div class="slide-label">Unsere Geschichte</div>
+    <div class="slide-title">Von einer Idee zur nationalen Initiative — <em>6 Jahre konsequenter Aufbau.</em></div>
+  </div>
+
+  <div class="geschichte-body">
+    <div class="geschichte-timeline-card">
+      <img src="assets/Workshop+BS_14012026+(2).webp" alt="Skills-UP! Meilensteine 2020–2026">
+    </div>
+    <div class="geschichte-milestones">
+      <div class="ms-box">
+        <div class="ms-year">2020</div>
+        <div class="ms-text">Idee &amp; erste Umsetzung — Future Wings Challenge</div>
+      </div>
+      <div class="ms-box">
+        <div class="ms-year">2021</div>
+        <div class="ms-text">MVP-Entwicklung — Expertinnen-Netzwerk aufgebaut</div>
+      </div>
+      <div class="ms-box">
+        <div class="ms-year">2022</div>
+        <div class="ms-text">Erste 50 Lehrlinge — TGW Logistics — Vereinsgründung</div>
+      </div>
+      <div class="ms-box">
+        <div class="ms-year">2023</div>
+        <div class="ms-text">Skalierung &amp; Wiederholung — Ovos-Technologie</div>
+      </div>
+      <div class="ms-box hero">
+        <div class="ms-year">2025</div>
+        <div class="ms-text">TOP 3 MEGA Bildungsmillion — <strong style="color:var(--peach)">€ 200.000</strong> Förderpreis</div>
+      </div>
+      <div class="ms-box hero">
+        <div class="ms-year">2026</div>
+        <div class="ms-text">Berufsschulen Burgenland — Nat. Finanzbildungsstrategie</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="geschichte-footer">
+    <span>Gesamt seit 2020:</span>
+    € 227.000 Budget &nbsp;·&nbsp; 2 VZÄ + 4 Trainer:innen &nbsp;·&nbsp; 1.830 erreichte Schüler:innen &nbsp;·&nbsp; 24 Lehrende eingebunden
+  </div>
+</div>
+
+<!-- ══ SLIDE 7 — TRACTION & TEAM ══ -->
 <div class="slide" id="s4">
   <div class="slide-header">
     <div class="slide-label">Traction &amp; Team · Seit 2022 · Gemeinnütziger Verein</div>
@@ -1217,11 +1396,6 @@ html, body {
       <div class="tc-label">Lehrer:innen eingebunden</div>
       <div class="tc-num"><span class="accent">24</span></div>
       <div class="tc-desc">Multiplikator:innen an 4 Berufsschulen · 90 % Verhaltensänderung bei Lehrlingen</div>
-    </div>
-
-    <!-- Company journey 2020–2026 -->
-    <div class="traction-timeline">
-      <img src="assets/Workshop+BS_14012026+(2).webp" alt="Skills-UP! Meilensteine 2020–2026 · von Future Wings bis Berufsschule Burgenland">
     </div>
 
     <div class="team-row">
